@@ -32,3 +32,11 @@ qemu: fibseq
 	@sleep 1
 	@yes 7 | $(call QEMU_CMD)
 	@sleep 1
+	@yes 35 | $(call QEMU_CMD)
+	@sleep 1
+	@yes 40 | $(call QEMU_CMD)
+	@sleep 1
+	@yes 45 | $(call QEMU_CMD)
+	@sleep 1
+	@yes 46 | $(call QEMU_CMD)
+	@sleep 1
