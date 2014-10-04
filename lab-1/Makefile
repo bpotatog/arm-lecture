@@ -2,7 +2,7 @@ CC	= arm-linux-gnueabihf-gcc
 CFLAGS	= -O1 -Wall
 LDFLAGS = -fno-stack-protector
 
-objects	= fibseq.o fib.o
+objects	= fibseq.o fib_non.o
 
 default: fibseq
 
@@ -11,7 +11,7 @@ default: fibseq
 fibseq: $(objects)
 	$(CC) $(LDFLAGS) -o $@ $^
 
-fib.o: fib.s
+fib_non.o: fib_non.s
 fibseq.o: fibseq.c
 
 %.o: %.c
@@ -32,11 +32,7 @@ qemu: fibseq
 	@sleep 1
 	@yes 7 | $(call QEMU_CMD)
 	@sleep 1
-	@yes 35 | $(call QEMU_CMD)
+	@yes 10 | $(call QEMU_CMD)
 	@sleep 1
-	@yes 40 | $(call QEMU_CMD)
-	@sleep 1
-	@yes 45 | $(call QEMU_CMD)
-	@sleep 1
-	@yes 46 | $(call QEMU_CMD)
+	@yes 15 | $(call QEMU_CMD)
 	@sleep 1
